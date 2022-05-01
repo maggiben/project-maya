@@ -1,0 +1,29 @@
+type Query {
+  product(name: String!): Product!
+}
+
+type Mutation {
+  product(name: String!): Product!
+}
+
+type Size {
+  width: Float!
+  height: Float!
+  lenght: Float!
+}
+
+type Units {
+  distance: String!
+  temperature: String!
+  weight: String!
+}
+
+type Product {
+  name: String!
+  description: String!
+  price: Float!
+  size: Size!
+  weight: Float!
+  units: Units!
+  fragile: Boolean
+}

@@ -9,25 +9,34 @@
     "typescript-maker": "./bin/generateApp.js"
   },
   "scripts": {
-    "start": "ts-node -r tsconfig-paths/register -r dotenv/config src/index",
+    "start": "ts-node -r tsconfig-paths/register -r dotenv/config -r graphql-import-node/register src/index",
     "dev": "nodemon --config restart.json",
     "clean": "rm -rf coverage build tmp",
     "prebuild": "npm run lint",
     "build": "tsc -p tsconfig.build.json",
     "build:watch": "tsc -w -p tsconfig.build.json",
     "lint": "eslint . --ext .ts,.tsx",
-    "test": "jest"
+    "test": "jest",
+    "codegen": "graphql-codegen --config codegen.yml"
   },
   "author": "Dantis Mai <mtd.maithanhdanh@gmail.com>",
   "license": "Apache-2.0",
   "dependencies": {
+    "@graphql-tools/schema": "^8.3.10",
+    "apollo-server-express": "^3.6.7",
     "commander": "^8.3.0",
     "express": "^4.17.1",
+    "graphql": "^16.4.0",
+    "graphql-import-node": "0.0.5",
     "module-alias": "^2.2.2",
     "tslib": "~2.3.0",
     "winston": "^3.3.3"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "^2.6.2",
+    "@graphql-codegen/typescript": "^2.4.8",
+    "@graphql-codegen/typescript-resolvers": "^2.6.1",
+    "@graphql-tools/utils": "^8.6.9",
     "@tsconfig/recommended": "^1.0.1",
     "@types/express": "^4.17.13",
     "@types/jest": "^26.0.24",
