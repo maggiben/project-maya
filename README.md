@@ -1,3 +1,4 @@
+# Made to work with GraphQL
 # node-typescript-boilerplate
 
 [![TypeScript version][ts-badge]][typescript-4-3]
